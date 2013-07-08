@@ -49,7 +49,6 @@ var buildfn = function(checks_file) {
 		var present = $(checks[ii]).length > 0;
 		out[checks[ii]] = present;
 	    }
-
 	    var outJson = JSON.stringify(out, null, 4);
 	    console.log(outJson);
 
@@ -96,7 +95,6 @@ if(require.main == module) {
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-u, --url <URL>', 'URL to index.html')
         .parse(process.argv);
-    console.log("program.url=%s\n", program.url);
     if (program.url) {
 	checkURL(program.url, program.checks);
     } else {
